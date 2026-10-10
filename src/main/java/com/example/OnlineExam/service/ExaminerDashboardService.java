@@ -1,5 +1,8 @@
 package com.example.OnlineExam.service;
 
+
+import java.time.ZoneId;
+
 import com.example.OnlineExam.dto.ExaminerDashboardExamResponse;
 import com.example.OnlineExam.dto.ExaminerDashboardResponse;
 import com.example.OnlineExam.dto.ExaminerStudentResultResponse;
@@ -37,7 +40,8 @@ public class ExaminerDashboardService {
 
         List<Exam> exams = examRepository.findAll();
 
-        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime now =
+        LocalDateTime.now(ZoneId.of("Asia/Kolkata"));)
 
         long activeExams = exams.stream()
                 .filter(exam ->
