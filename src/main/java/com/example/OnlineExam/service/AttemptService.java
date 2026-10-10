@@ -1,5 +1,7 @@
 package com.example.OnlineExam.service;
 
+
+import java.time.ZoneId;
 import com.example.OnlineExam.dto.AnswerRequest;
 import com.example.OnlineExam.dto.ResultResponse;
 import com.example.OnlineExam.model.*;
@@ -90,7 +92,7 @@ public class AttemptService {
          * ---------------------------------------------------------
          */
 
-        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime now =LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
 
         if (exam.getStartTime() != null
                 && now.isBefore(exam.getStartTime())) {
