@@ -1,5 +1,7 @@
 package com.example.OnlineExam.service;
 
+import java.time.ZoneId;
+
 import com.example.OnlineExam.dto.ExamRequest;
 import com.example.OnlineExam.dto.ExamResponse;
 import com.example.OnlineExam.model.Exam;
@@ -54,7 +56,8 @@ public class ExamService {
 
     public List<ExamResponse> getAvailable() {
 
-        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime now =
+        LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
 
         return examRepository.findAll()
                 .stream()
