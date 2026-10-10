@@ -36,7 +36,7 @@ public class StudentDashboardService {
         List<Result> results =
                 resultRepository.findByUserUserIdOrderByCreatedAtDesc(userId);
 
-        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Kolkata"))
+        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
 
         /*
          * Exams currently available.
