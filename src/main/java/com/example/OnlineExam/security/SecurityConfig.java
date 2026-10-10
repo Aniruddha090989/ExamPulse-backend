@@ -1,5 +1,6 @@
 
 package com.example.OnlineExam.security;
+import jakarta.servlet.DispatcherType;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -97,6 +98,12 @@ public class SecurityConfig {
                                 "/api/student/**",
                                 "/api/attempts/**"
                         ).hasRole("STUDENT")
+
+
+
+                        .dispatcherTypeMatchers(DispatcherType.ERROR).permitAll()
+                        .requestMatchers("/error").permitAll()
+                        .requestMatchers("/api/auth/**").permitAll()
 
                         // All remaining endpoints require authentication.
                         .anyRequest().authenticated()
