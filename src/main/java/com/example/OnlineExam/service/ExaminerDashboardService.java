@@ -42,7 +42,7 @@ public class ExaminerDashboardService {
         List<Exam> exams = examRepository.findAll();
 
         LocalDateTime now =
-        LocalDateTime.now(ZoneId.of("Asia/Kolkata"));)
+        LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
 
         long activeExams = exams.stream()
                 .filter(exam ->
