@@ -1,5 +1,7 @@
 package com.example.OnlineExam.service;
 
+import java.time.ZoneId;
+
 import com.example.OnlineExam.dto.StudentDashboardResponse;
 import com.example.OnlineExam.model.Credential;
 import com.example.OnlineExam.model.Exam;
@@ -33,7 +35,7 @@ public class StudentDashboardService {
         List<Result> results =
                 resultRepository.findByUserUserIdOrderByCreatedAtDesc(userId);
 
-        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Kolkata"))
 
         /*
          * Exams currently available.
